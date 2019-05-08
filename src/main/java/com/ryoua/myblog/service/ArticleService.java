@@ -1,6 +1,7 @@
 package com.ryoua.myblog.service;
 
 import com.ryoua.myblog.entity.Article;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -9,4 +10,8 @@ import java.util.List;
  */
 public interface ArticleService {
     List<Article> getAllArticles();
+
+    Article getArticleById(Integer id);
+
+    Page<Article> findArticleByPageId(Integer page, Integer size);
 }

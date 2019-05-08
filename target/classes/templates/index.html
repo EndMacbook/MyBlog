@@ -116,7 +116,7 @@
                         《笨方法学写作》电子书免费下载
                     </h2>
 
-                    <div class="post-content-preview">
+                    <div class="post-content-preview" th:text="${article.summary}">
                         下载地址：https://github.com/cnfeat/GoodThingList/blob/master/Book_LearnWritingTheHardWay.pdf
 
                         百度云下载地址：链接: https://pan.baidu.com/s/12buyBW9P2B...
@@ -131,9 +131,12 @@
 
             <ul class="pager">
 
+                <li class="previous">
+                    <a href="/" th:href="'/' + *{pagePreId}">&larr; 上一页</a>
+                </li>
 
                 <li class="next">
-                    <a href="/page2">Older Posts &rarr;</a>
+                    <a href="/page2" th:href="'/' + *{pageNextId}">下一页 &rarr;</a>
                 </li>
 
             </ul>
