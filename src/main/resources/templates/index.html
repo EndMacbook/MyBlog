@@ -122,7 +122,7 @@
                         百度云下载地址：链接: https://pan.baidu.com/s/12buyBW9P2B...
                     </div>
                 </a>
-                <p class="post-meta" th:text="'发表于 ' + ${article.createTime}">Posted on 2019-12-31</p>
+                <p class="post-meta" th:text="'Posted on ' + ${article.formatTime}">Posted on 2019-12-31</p>
             </div>
 
             <hr>
@@ -132,11 +132,11 @@
             <ul class="pager">
 
                 <li class="previous">
-                    <a href="/" th:href="'/' + *{pagePreId}">&larr; 上一页</a>
+                    <a href="/" th:href="'/' + *{pagePreId}"  th:style="'display: ' + ${showPre}" style="display: inline">&larr; 上一页</a>
                 </li>
 
                 <li class="next">
-                    <a href="/page2" th:href="'/' + *{pageNextId}">下一页 &rarr;</a>
+                    <a href="/page2" th:href="'/' + *{pageNextId}" th:style="'display: ' + ${showNext}" style="display: inline">下一页 &rarr;</a>
                 </li>
 
             </ul>

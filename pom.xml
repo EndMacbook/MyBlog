@@ -80,6 +80,12 @@
             <artifactId>MDTool</artifactId>
             <version>1.2.3</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shiro</groupId>-->
+<!--            <artifactId>shiro-spring-boot-starter</artifactId>-->
+<!--            <version>1.4.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

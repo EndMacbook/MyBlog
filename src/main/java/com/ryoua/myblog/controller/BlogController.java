@@ -19,14 +19,23 @@ public class BlogController {
 
     @GetMapping("/blog/{blogId}")
     public String getBlogById(@PathVariable("blogId") Integer id, Model model) {
+        int articleSize = articleService.getAllArticles().size();
         Article article = articleService.getArticleById(id);
         article.setArticleContent(MDTool.markdown2Html(article.getArticleContent()));
-        if (articleService.getArticleById(id - 1) != null) {
-            model.addAttribute("preTitle", articleService.getArticleById(id - 1).getArticleTitle());
-        }
-        if (articleService.getArticleById(id + 1) != null) {
+        if (id == 1) {
+            model.addAttribute("showPre", "none");
             model.addAttribute("nextTitle", articleService.getArticleById(id + 1).getArticleTitle());
+            model.addAttribute("article", article);
+            return "blog";
         }
+        if (id == articleSize) {
+            model.addAttribute("showNext", "none");
+            model.addAttribute("preTitle", articleService.getArticleById(id - 1).getArticleTitle());
+            model.addAttribute("article", article);
+            return "blog";
+        }
+        model.addAttribute("preTitle", articleService.getArticleById(id - 1).getArticleTitle());
+        model.addAttribute("nextTitle", articleService.getArticleById(id + 1).getArticleTitle());
         model.addAttribute("article", article);
         return "blog";
     }

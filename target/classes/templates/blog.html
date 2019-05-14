@@ -115,7 +115,7 @@
                     </div>
                     <h1 th:text="*{article.articleTitle}">写出短小精悍好卡片的5个小技巧</h1>
 
-                    <span class="meta" th:text="*{article.createTime}">Posted on 2019-03-06</span>
+                    <span class="meta" th:text="*{article.formatTime}">Posted on 2019-03-06</span>
                 </div>
             </div>
         </div>
@@ -139,18 +139,15 @@
                 <ul class="pager">
 
                     <li class="previous">
-                        <a href="/blog/2019/03/05/ZengGuoFan/" th:href="'/blog/' + *{article.id - 1}" data-toggle="tooltip" data-placement="top" title="前面没有文章了" th:title="*{preTitle}">&larr; 上一篇</a>
+                        <a href="/blog/2019/03/05/ZengGuoFan/" th:style="'display: ' + ${showPre}" style="display: inline" th:href="'/blog/' + *{article.id - 1}" data-toggle="tooltip" data-placement="top" title="前面没有文章了" th:title="*{preTitle}">&larr; 上一篇</a>
                     </li>
 
 
                     <li class="next">
-                        <a href="/blog/2019/03/08/MacAppList/" th:href="'/blog/' + *{article.id + 1}" data-toggle="tooltip" data-placement="top" title="后面没有文章了" th:title="*{nextTitle}">下一篇 &rarr;</a>
+                        <a href="/blog/2019/03/08/MacAppList/" th:style="'display: ' + ${showNext}" style="display: inline" th:href="'/blog/' + *{article.id + 1}" data-toggle="tooltip" data-placement="top" title="后面没有文章了" th:title="*{nextTitle}">下一篇 &rarr;</a>
                     </li>
 
                 </ul>
-
-
-
 
 
                 <style>

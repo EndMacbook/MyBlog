@@ -10,25 +10,24 @@
 
     <title>RyouA的博客</title>
 
-    <link rel="canonical" href="http://www.cnfeat.com/">
+    <link rel="canonical" href="http://www.cnfeat.com/archive/">
 
     <!-- Icons -->
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/clean-blog.css">
+    <link rel="stylesheet" href="/css/clean-blog.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" type="text/css" href="css/syntax.css">
+    <link rel="stylesheet" href="/css/syntax.css">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-          rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,13 +38,11 @@
 
     <!-- Bruce edited -->
     <!-- back-to-top css -->
-    <link rel="stylesheet" type="text/css" href="css/backtop.css">
+    <link rel="stylesheet" href="/css/backtop.css">
     <!-- back-to-top need jQuery -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript"
-            src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body ontouchstart="">
 
 <!-- Navigation -->
@@ -90,14 +87,14 @@
 
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/Xacebook.jpg')">
+<header class="intro-header" style="background-image: url('/img/orange.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>RyouA的博客</h1>
+                    <h1>归档</h1>
                     <hr class="small">
-                    <span class="subheading">RyouA</span>
+                    <span class="subheading">你看到的，是我的所有文章</span>
                 </div>
             </div>
         </div>
@@ -108,77 +105,42 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-            <div class="post-preview" th:each="article : ${articles}">
-                <a href="/blog/2019/12/31/BookLearnWritingTheHardWay/"
-                   th:href="'/blog/' + *{article.id}">
-                    <h2 class="post-title" 1 th:title="${article.articleTitle}" th:text="${article.articleTitle}">
-                        《笨方法学写作》电子书免费下载
-                    </h2>
-
-                    <div class="post-content-preview" th:text="${article.summary}">
-                        下载地址：https://github.com/cnfeat/GoodThingList/blob/master/Book_LearnWritingTheHardWay.pdf
-
-                        百度云下载地址：链接: https://pan.baidu.com/s/12buyBW9P2B...
-                    </div>
-                </a>
-                <p class="post-meta" th:text="'Posted on ' + ${article.formatTime}">Posted on 2019-12-31</p>
-            </div>
-
-            <hr>
-
-            <!-- Pager -->
-
-            <ul class="pager">
-
-                <li class="previous">
-                    <a href="/" th:href="'/' + *{pagePreId}"  th:style="'display: ' + ${showPre}" style="display: inline">&larr; 上一页</a>
+            <ul class="listing">
+                <li class="listing-item" th:each="article : ${articles}">
+                    <time datetime="2019-12-31" th:text="${article.formatTime}">2019-12-31</time>
+                    <a href="/blog/2019/12/31/BookLearnWritingTheHardWay/" th:href="'/blog/' + *{article.id}" title="《笨方法学写作》电子书免费下载" th:title="${article.articleTitle}" th:text="${article.articleTitle}">《笨方法学写作》电子书免费下载</a>
                 </li>
-
-                <li class="next">
-                    <a href="/page2" th:href="'/' + *{pageNextId}" th:style="'display: ' + ${showNext}" style="display: inline">下一页 &rarr;</a>
-                </li>
-
             </ul>
-
-
         </div>
     </div>
 </div>
 
 <hr>
 
-
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="/js/jquery.min.js "></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/clean-blog.min.js"></script>
+<script src="/js/clean-blog.min.js "></script>
+
 
 
 <!-- Highlight.js -->
 <script>
-    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () {
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
         hljs.initHighlightingOnLoad();
     })
 </script>
 <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-80884545-1', 'auto');
     ga('send', 'pageview');
@@ -217,17 +179,13 @@
             o = d.createElement(t),
             s = d.getElementsByTagName(t)[0];
         o.src = u;
-        if (c) {
-            o.addEventListener('load', function (e) {
-                c(null, e);
-            }, false);
-        }
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
         s.parentNode.insertBefore(o, s);
     }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js", function () {
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js",function(){
         anchors.options.placement = 'right';
         anchors.add('h2,h3');
         anchors.remove('.subheading');

@@ -1,10 +1,7 @@
 package com.ryoua.myblog.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -40,8 +37,8 @@ public class Article implements Serializable {
     private Date createTime;
 
     //最新更新时间
-    @Column(name = "update_time")
-    private Date updateTime;
+    @Transient
+    private String formatTime;
 
     public void setId(Integer id) {
         this.id = id;
@@ -91,11 +88,11 @@ public class Article implements Serializable {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public String getFormatTime() {
+        return formatTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setFormatTime(String formatTime) {
+        this.formatTime = formatTime;
     }
 }

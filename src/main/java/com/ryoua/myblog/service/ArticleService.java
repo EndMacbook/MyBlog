@@ -14,4 +14,6 @@ public interface ArticleService {
     Article getArticleById(Integer id);
 
     Page<Article> findArticleByPageId(Integer page, Integer size);
+
+    void save(Article article);
 }

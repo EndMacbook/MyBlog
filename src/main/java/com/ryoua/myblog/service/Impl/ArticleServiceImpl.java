@@ -21,6 +21,11 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleRepository articleRepository;
 
     @Override
+    public void save(Article article) {
+        articleRepository.save(article);
+    }
+
+    @Override
     public Article getArticleById(Integer id) {
         return articleRepository.getOne(id);
     }
