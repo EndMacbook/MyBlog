@@ -1,23 +1,36 @@
 package com.ryoua.myblog.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * @Author ryoua Created on 2019-05-16
  */
+@Entity
+@Table(name = "tbl_article_info")
 public class ArticleInfo {
+    @Id
     private Long id;
 
+    @Column(name = "title")
     private String title;
 
+    @Column(name = "summary")
     private String summary;
 
+    @Column(name = "is_top")
     private Boolean isTop;
 
+    @Column(name = "traffic")
     private Integer traffic;
 
+    @Column(name = "create_by")
     private Date createBy;
 
+    @Column(name = "modified_by")
     private Date modifiedBy;
 
     public Long getId() {

@@ -1,21 +1,32 @@
 package com.ryoua.myblog.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * @Author ryoua Created on 2019-05-16
  */
+@Entity
+@Table(name = "sys_log")
 public class SysLog {
+
+    @Id
     private Long id;
 
     private String ip;
 
+    @Column(name = "create_by")
     private Date createBy;
 
     private String remark;
 
+    @Column(name = "operate_url")
     private String operateUrl;
 
+    @Column(name = "operate_by")
     private String operateBy;
 
     public Long getId() {

@@ -2,16 +2,22 @@ package com.ryoua.myblog.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * @Author ryoua Created on 2019-05-16
  */
+@Entity
+@Table(name = "sys_view")
 public class SysView {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String ip;
 
+    @Column(name = "create_by")
     private Date createBy;
 
     public Long getId() {

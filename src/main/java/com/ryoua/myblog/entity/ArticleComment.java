@@ -1,18 +1,30 @@
 package com.ryoua.myblog.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * @Author ryoua Created on 2019-05-16
  */
-public class ArticleComment { private Long id;
+@Entity
+@Table(name = "tbl_article_comment")
+public class ArticleComment {
+    @Id
+    private Long id;
 
+    @Column(name = "article_id")
     private Long articleId;
 
+    @Column(name = "comment_id")
     private Long commentId;
 
+    @Column(name = "create_by")
     private Date createBy;
 
+    @Column(name = "is_effective")
     private Boolean isEffective;
 
     public Long getId() {
