@@ -54,4 +54,15 @@ public class ArticleCategoryDto {
     public void setNumber(Byte number) {
         this.number = number;
     }
+
+    @Override
+    public String toString() {
+        return "ArticleCategoryDto{" +
+                "id=" + id +
+                ", categoryId=" + categoryId +
+                ", articleId=" + articleId +
+                ", name='" + name + '\'' +
+                ", number=" + number +
+                '}';
+    }
 }
