@@ -42,7 +42,7 @@
     <sql id="Base_Column_List">
     id, title, summary, is_top, traffic, create_by, modified_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.ArticleInfoExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.ArticleInfoExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -67,7 +67,7 @@
     delete from tbl_article_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleInfo" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleInfo" useGeneratedKeys="true">
     insert into tbl_article_info (title, summary, is_top,
       traffic, create_by, modified_by
       )
@@ -75,7 +75,7 @@
       #{traffic,jdbcType=INTEGER}, #{createBy,jdbcType=TIMESTAMP}, #{modifiedBy,jdbcType=TIMESTAMP}
       )
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleInfo" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleInfo" useGeneratedKeys="true">
         insert into tbl_article_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="title != null">
@@ -118,7 +118,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.ArticleInfo">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.ArticleInfo">
         update tbl_article_info
         <set>
             <if test="title != null">
@@ -142,7 +142,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.ArticleInfo">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.ArticleInfo">
     update tbl_article_info
     set title = #{title,jdbcType=VARCHAR},
       summary = #{summary,jdbcType=VARCHAR},

@@ -38,7 +38,7 @@
     <sql id="Base_Column_List">
     id, ip, create_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.SysViewExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.SysViewExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -63,11 +63,11 @@
     delete from sys_view
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.SysView" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysView" useGeneratedKeys="true">
     insert into sys_view (ip, create_by)
     values (#{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.SysView" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysView" useGeneratedKeys="true">
         insert into sys_view
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="ip != null">
@@ -86,7 +86,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.SysView">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.SysView">
         update sys_view
         <set>
             <if test="ip != null">
@@ -98,7 +98,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.SysView">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.SysView">
     update sys_view
     set ip = #{ip,jdbcType=VARCHAR},
       create_by = #{createBy,jdbcType=TIMESTAMP}

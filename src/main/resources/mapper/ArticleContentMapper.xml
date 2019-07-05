@@ -40,7 +40,7 @@
     <sql id="Base_Column_List">
     id, content, article_id, create_by, modifield_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.ArticleContentExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.ArticleContentExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -65,13 +65,13 @@
     delete from tbl_article_content
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleContent" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent" useGeneratedKeys="true">
     insert into tbl_article_content (content, article_id, create_by,
       modifield_by)
     values (#{content,jdbcType=VARCHAR}, #{articleId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP},
       #{modifieldBy,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleContent" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent" useGeneratedKeys="true">
         insert into tbl_article_content
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="content != null">
@@ -102,7 +102,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.ArticleContent">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.ArticleContent">
         update tbl_article_content
         <set>
             <if test="content != null">
@@ -120,7 +120,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.ArticleContent">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.ArticleContent">
     update tbl_article_content
     set content = #{content,jdbcType=VARCHAR},
       article_id = #{articleId,jdbcType=BIGINT},

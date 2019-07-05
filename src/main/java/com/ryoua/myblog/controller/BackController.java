@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class BackController extends BaseController {
 
     /* 后台登录账号密码 */
-    private static String username = "wmyskxz";
+    private static String username = "ryoua";
     private static String password = "123456";
 
     /**

@@ -41,7 +41,7 @@
     <sql id="Base_Column_List">
     id, ip, create_by, remark, operate_url, operate_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.SysLogExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.SysLogExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -66,13 +66,13 @@
     delete from sys_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.SysLog" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog" useGeneratedKeys="true">
     insert into sys_log (ip, create_by, remark,
       operate_url, operate_by)
     values (#{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR},
       #{operateUrl,jdbcType=VARCHAR}, #{operateBy,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.SysLog" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog" useGeneratedKeys="true">
         insert into sys_log
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="ip != null">
@@ -109,7 +109,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.SysLog">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.SysLog">
         update sys_log
         <set>
             <if test="ip != null">
@@ -130,7 +130,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.SysLog">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.SysLog">
     update sys_log
     set ip = #{ip,jdbcType=VARCHAR},
       create_by = #{createBy,jdbcType=TIMESTAMP},

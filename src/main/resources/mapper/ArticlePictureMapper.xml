@@ -40,7 +40,7 @@
     <sql id="Base_Column_List">
     id, article_id, picture_url, create_by, modified_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.ArticlePictureExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.ArticlePictureExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -65,13 +65,13 @@
     delete from tbl_article_picture
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticlePicture" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticlePicture" useGeneratedKeys="true">
     insert into tbl_article_picture (article_id, picture_url, create_by,
       modified_by)
     values (#{articleId,jdbcType=BIGINT}, #{pictureUrl,jdbcType=VARCHAR}, #{createBy,jdbcType=TIMESTAMP},
       #{modifiedBy,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticlePicture" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticlePicture" useGeneratedKeys="true">
         insert into tbl_article_picture
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="articleId != null">
@@ -102,7 +102,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.ArticlePicture">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.ArticlePicture">
         update tbl_article_picture
         <set>
             <if test="articleId != null">
@@ -120,7 +120,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.ArticlePicture">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.ArticlePicture">
     update tbl_article_picture
     set article_id = #{articleId,jdbcType=BIGINT},
       picture_url = #{pictureUrl,jdbcType=VARCHAR},

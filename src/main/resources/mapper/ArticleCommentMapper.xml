@@ -40,7 +40,7 @@
     <sql id="Base_Column_List">
     id, article_id, comment_id, create_by, is_effective
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.ArticleCommentExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.ArticleCommentExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -65,13 +65,13 @@
     delete from tbl_article_comment
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleComment" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleComment" useGeneratedKeys="true">
     insert into tbl_article_comment (article_id, comment_id, create_by,
       is_effective)
     values (#{articleId,jdbcType=BIGINT}, #{commentId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP},
       #{isEffective,jdbcType=BIT})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.ArticleComment" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleComment" useGeneratedKeys="true">
         insert into tbl_article_comment
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="articleId != null">
@@ -102,7 +102,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.ArticleComment">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.ArticleComment">
         update tbl_article_comment
         <set>
             <if test="articleId != null">
@@ -120,7 +120,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.ArticleComment">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.ArticleComment">
     update tbl_article_comment
     set article_id = #{articleId,jdbcType=BIGINT},
       comment_id = #{commentId,jdbcType=BIGINT},

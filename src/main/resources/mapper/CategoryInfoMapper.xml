@@ -40,7 +40,7 @@
     <sql id="Base_Column_List">
     id, name, number, create_by, modified_by
   </sql>
-    <select id="selectByExample" parameterType="cn.wmyskxz.blog.entity.CategoryInfoExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.ryoua.blog.entity.CategoryInfoExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -65,13 +65,13 @@
     delete from tbl_category_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.CategoryInfo" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.CategoryInfo" useGeneratedKeys="true">
     insert into tbl_category_info (name, number, create_by,
       modified_by)
     values (#{name,jdbcType=VARCHAR}, #{number,jdbcType=TINYINT}, #{createBy,jdbcType=TIMESTAMP},
       #{modifiedBy,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.wmyskxz.blog.entity.CategoryInfo" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.CategoryInfo" useGeneratedKeys="true">
         insert into tbl_category_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="name != null">
@@ -102,7 +102,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.wmyskxz.blog.entity.CategoryInfo">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.ryoua.blog.entity.CategoryInfo">
         update tbl_category_info
         <set>
             <if test="name != null">
@@ -120,7 +120,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.wmyskxz.blog.entity.CategoryInfo">
+    <update id="updateByPrimaryKey" parameterType="cn.ryoua.blog.entity.CategoryInfo">
     update tbl_category_info
     set name = #{name,jdbcType=VARCHAR},
       number = #{number,jdbcType=TINYINT},
