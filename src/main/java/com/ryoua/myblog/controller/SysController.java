@@ -1,7 +1,5 @@
 package com.ryoua.myblog.controller;
 
-import com.ryoua.myblog.entity.SysLog;
-import com.ryoua.myblog.entity.SysView;
 import com.ryoua.myblog.service.SysService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

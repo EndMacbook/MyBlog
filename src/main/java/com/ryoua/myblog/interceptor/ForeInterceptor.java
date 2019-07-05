@@ -1,7 +1,6 @@
 package com.ryoua.myblog.interceptor;
 
 import com.alibaba.druid.util.StringUtils;
-import com.ryoua.myblog.entity.SysView;
 import com.ryoua.myblog.service.SysService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;

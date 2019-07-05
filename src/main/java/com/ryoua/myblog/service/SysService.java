@@ -1,8 +1,5 @@
 package com.ryoua.myblog.service;
 
-import com.ryoua.myblog.entity.SysLog;
-import com.ryoua.myblog.entity.SysView;
-
 import java.util.List;
 
 /**

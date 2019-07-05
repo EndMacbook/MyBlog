@@ -1,6 +1,5 @@
 package com.ryoua.myblog.interceptor;
 
-import com.ryoua.myblog.entity.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;

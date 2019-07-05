@@ -1,6 +1,5 @@
 package com.ryoua.myblog.service.Impl;
 
-import com.ryoua.myblog.entity.SysView;
 import com.ryoua.myblog.repository.SysViewRepository;
 import com.ryoua.myblog.service.SysService;
 import org.springframework.beans.factory.annotation.Autowired;

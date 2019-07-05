@@ -1,8 +1,6 @@
 package com.ryoua.myblog.controller;
 
 import com.ryoua.myblog.dto.ArticleDto;
-import com.ryoua.myblog.entity.CategoryInfo;
-import com.ryoua.myblog.entity.User;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;

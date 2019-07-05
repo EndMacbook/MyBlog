@@ -2,7 +2,6 @@ package com.ryoua.myblog.service;
 
 import com.ryoua.myblog.dto.ArticleDto;
 import com.ryoua.myblog.dto.ArticleWithPictureDto;
-import com.ryoua.myblog.entity.ArticlePicture;
 
 import java.util.List;
 
