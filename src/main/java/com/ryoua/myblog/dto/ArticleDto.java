@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * 文章
+ *
  * @Author ryoua Created on 2019-05-18
  */
 public class ArticleDto {

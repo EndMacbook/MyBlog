@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 记录访问信息
+ *
  * @Author ryoua Created on 2019-05-18
  */
 public class ForeInterceptor implements HandlerInterceptor {

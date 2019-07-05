@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ryoua.myblog.dao.SysLogMapper">
     <resultMap id="BaseResultMap" type="com.ryoua.myblog.entity.SysLog">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <result column="ip" jdbcType="VARCHAR" property="ip" />
-        <result column="create_by" jdbcType="TIMESTAMP" javaType="java.util.Date" property="createBy" />
-        <result column="remark" jdbcType="VARCHAR" property="remark" />
-        <result column="operate_url" jdbcType="VARCHAR" property="operateUrl" />
-        <result column="operate_by" jdbcType="VARCHAR" property="operateBy" />
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="ip" jdbcType="VARCHAR" property="ip"/>
+        <result column="create_by" jdbcType="TIMESTAMP" javaType="java.util.Date" property="createBy"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="operate_url" jdbcType="VARCHAR" property="operateUrl"/>
+        <result column="operate_by" jdbcType="VARCHAR" property="operateBy"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -27,7 +27,8 @@
                                 </when>
                                 <when test="criterion.listValue">
                                     and ${criterion.condition}
-                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
                                         #{listItem}
                                     </foreach>
                                 </when>
@@ -47,10 +48,10 @@
             distinct
         </if>
         'false' as QUERYID,
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from sys_log
         <if test="_parameter != null">
-            <include refid="Example_Where_Clause" />
+            <include refid="Example_Where_Clause"/>
         </if>
         <if test="orderByClause != null">
             order by ${orderByClause}
@@ -58,7 +59,7 @@
     </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from sys_log
         where id = #{id,jdbcType=BIGINT}
     </select>
@@ -66,13 +67,15 @@
     delete from sys_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog"
+            useGeneratedKeys="true">
     insert into sys_log (ip, create_by, remark,
       operate_url, operate_by)
     values (#{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR},
       #{operateUrl,jdbcType=VARCHAR}, #{operateBy,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.SysLog"
+            useGeneratedKeys="true">
         insert into sys_log
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="ip != null">

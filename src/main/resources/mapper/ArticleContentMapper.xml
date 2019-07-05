@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ryoua.myblog.dao.ArticleContentMapper">
     <resultMap id="BaseResultMap" type="com.ryoua.myblog.entity.ArticleContent">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <result column="content" jdbcType="VARCHAR" property="content" />
-        <result column="article_id" jdbcType="BIGINT" property="articleId" />
-        <result column="create_by" jdbcType="TIMESTAMP" property="createBy" />
-        <result column="modifield_by" jdbcType="TIMESTAMP" property="modifieldBy" />
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="article_id" jdbcType="BIGINT" property="articleId"/>
+        <result column="create_by" jdbcType="TIMESTAMP" property="createBy"/>
+        <result column="modifield_by" jdbcType="TIMESTAMP" property="modifieldBy"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -26,7 +26,8 @@
                                 </when>
                                 <when test="criterion.listValue">
                                     and ${criterion.condition}
-                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
                                         #{listItem}
                                     </foreach>
                                 </when>
@@ -46,10 +47,10 @@
             distinct
         </if>
         'false' as QUERYID,
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from tbl_article_content
         <if test="_parameter != null">
-            <include refid="Example_Where_Clause" />
+            <include refid="Example_Where_Clause"/>
         </if>
         <if test="orderByClause != null">
             order by ${orderByClause}
@@ -57,7 +58,7 @@
     </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from tbl_article_content
         where id = #{id,jdbcType=BIGINT}
     </select>
@@ -65,13 +66,15 @@
     delete from tbl_article_content
     where id = #{id,jdbcType=BIGINT}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent"
+            useGeneratedKeys="true">
     insert into tbl_article_content (content, article_id, create_by,
       modifield_by)
     values (#{content,jdbcType=VARCHAR}, #{articleId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP},
       #{modifieldBy,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.ryoua.blog.entity.ArticleContent"
+            useGeneratedKeys="true">
         insert into tbl_article_content
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="content != null">

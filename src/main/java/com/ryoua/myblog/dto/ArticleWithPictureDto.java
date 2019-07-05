@@ -2,6 +2,7 @@ package com.ryoua.myblog.dto;
 
 /**
  * 带图片的文章
+ *
  * @Author ryoua Created on 2019-05-18
  */
 public class ArticleWithPictureDto {
