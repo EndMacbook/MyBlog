@@ -33,7 +33,7 @@ public class ArticleServiceImpl implements ArticleService {
     private static byte MAX_LASTEST_ARTICLE_COUNT = 5;
 
     private Long getArticleLastestId() {
-       return articleCategoryRepository.getNewist().getArticleId();
+        return articleCategoryRepository.getNewist().getArticleId();
     }
 
     /**
