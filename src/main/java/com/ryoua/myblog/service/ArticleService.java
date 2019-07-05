@@ -2,6 +2,7 @@ package com.ryoua.myblog.service;
 
 import com.ryoua.myblog.dto.ArticleDto;
 import com.ryoua.myblog.dto.ArticleWithPictureDto;
+import com.ryoua.myblog.entity.ArticlePicture;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface ArticleService {
 
     void updateArticleCategory(Long articleId, Long categoryId);
 
-    ArticleDto getArticleById(Long id);
+    ArticleDto getOneById(Long id);
 
     ArticlePicture getPictureByArticleId(Long id);
 

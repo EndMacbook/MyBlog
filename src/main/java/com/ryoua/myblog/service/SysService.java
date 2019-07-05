@@ -1,5 +1,8 @@
 package com.ryoua.myblog.service;
 
+import com.ryoua.myblog.entity.SysLog;
+import com.ryoua.myblog.entity.SysView;
+
 import java.util.List;
 
 /**
@@ -8,9 +11,15 @@ import java.util.List;
  */
 public interface SysService {
 
+    void addLog(SysLog sysLog);
+
     void addView(SysView sysView);
 
+    int getLogCount();
+
     int getViewCount();
+
+    List<SysLog> listAllLog();
 
     List<SysView> listAllView();
 }
