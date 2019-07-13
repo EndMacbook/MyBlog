@@ -3,6 +3,8 @@ package com.ryoua.myblog.controller;
 import com.ryoua.myblog.dto.ArticleCommentDto;
 import com.ryoua.myblog.dto.ArticleDto;
 import com.ryoua.myblog.dto.ArticleWithPictureDto;
+import com.ryoua.myblog.entity.ArticleInfo;
+import com.ryoua.myblog.entity.ArticlePicture;
 import com.ryoua.myblog.entity.CategoryInfo;
 import com.ryoua.myblog.entity.Comment;
 import com.ryoua.myblog.utils.Markdown2HtmlUtil;
@@ -70,32 +72,32 @@ public class ForeController extends BaseController {
         return articleDto;
     }
 
-//    /**
-//     * 通过文章id获取一篇文章
-//     * 说明：ArticleInfo中封装了picture/content/category信息
-//     *
-//     * @param id
-//     * @return
-//     */
-//    @ApiOperation("通过文章id获取文章内容")
-//    @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long")
-//    @GetMapping("article/{id}")
-//    public ArticleInfo getArticleContent(@PathVariable Long id) {
-//        return articleService.getOneById(id);
-//    }
+    /**
+     * 通过文章id获取一篇文章
+     * 说明：ArticleInfo中封装了picture/content/category信息
+     *
+     * @param id
+     * @return
+     */
+    @ApiOperation("通过文章id获取文章内容")
+    @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long")
+    @GetMapping("article/{id}")
+    public ArticleDto getArticleContent(@PathVariable Long id) {
+        return articleService.getOneById(id);
+    }
 
-//    /**
-//     * 通过文章ID获取它对应的题图信息
-//     *
-//     * @param id
-//     * @return
-//     */
-//    @ApiOperation("获取文章题图信息")
-//    @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long")
-//    @GetMapping("article/picture/{id}")
-//    public ArticlePicture getArticlePicture(@PathVariable Long id) {
-//        return null;
-//    }
+    /**
+     * 通过文章ID获取它对应的题图信息
+     *
+     * @param id
+     * @return
+     */
+    @ApiOperation("获取文章题图信息")
+    @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long")
+    @GetMapping("article/picture/{id}")
+    public ArticlePicture getArticlePicture(@PathVariable Long id) {
+        return null;
+    }
 
     /**
      * 获取所有分类信息

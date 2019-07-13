@@ -121,16 +121,4 @@ public class CategoryServiceImpl implements CategoryService {
         articleCategoryDto.setNumber(categoryInfo.getNumber());
         return articleCategoryDto;
     }
-
-//    /**
-//     * 往ArticleCategory中填充对应的CategoryInfo信息
-//     * 说明：articleCategory中必能获取到对应的分类ID，这是在删除和增加时限制的
-//     *
-//     * @param articleCategory
-//     */
-//    private void fill(ArticleCategory articleCategory) {
-//        Long categoryId = articleCategory.getCategoryId();
-//        articleCategory.setCategoryInfo(getOneById(categoryId));
-//    }
-
 }

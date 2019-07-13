@@ -116,7 +116,7 @@ public class CommentServiceImpl implements CommentService {
         List<ArticleComment> articleComments = articleCommentMapper.selectByExample(example);
         // 填充对应的评论信息
         for (ArticleComment articleComment : articleComments) {
-            if (true == articleComment.getIsEffective()) {
+            if (articleComment.getIsEffective()) {
                 ArticleCommentDto articleCommentDto = new ArticleCommentDto();
                 articleCommentDto.setArticleCommentId(articleComment.getId());
                 articleCommentDto.setArticleId(articleComment.getArticleId());

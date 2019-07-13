@@ -14,8 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin")
 public class SysController {
-
-
     @Autowired
     SysService sysService;
 
@@ -40,5 +38,4 @@ public class SysController {
     public List<SysView> listAllView() {
         return sysService.listAllView();
     }
-
 }

@@ -21,7 +21,7 @@ public class BackController extends BaseController {
 
     /* 后台登录账号密码 */
     private static String username = "ryoua";
-    private static String password = "123456";
+    private static String password = "981013";
 
     /**
      * 后台登录操作
@@ -95,7 +95,6 @@ public class BackController extends BaseController {
     public String updateArticle(@PathVariable Long id, @RequestBody ArticleDto articleDto) {
         articleDto.setId(id);
         articleService.updateArticle(articleDto);
-//        System.out.println(articleDto.getTop());
         return null;
     }
 
@@ -135,21 +134,21 @@ public class BackController extends BaseController {
         return null;
     }
 
-//    /**
-//     * 插入一条题图信息
-//     *
-//     * @param id
-//     * @return
-//     */
-//    @ApiOperation("给文章插入一条题图信息")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long"),
-//            @ApiImplicitParam(name = "picture_url", value = "题图url", required = true, dataType = "String"),
-//    })
-//    @PostMapping("article/picture/{id}")
-//    public String addArticlePicture(@PathVariable Long id, @RequestBody String picture_url) {
-//        return null;
-//    }
+    /**
+     * 插入一条题图信息
+     *
+     * @param id
+     * @return
+     */
+    @ApiOperation("给文章插入一条题图信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "文章ID", required = true, dataType = "Long"),
+            @ApiImplicitParam(name = "picture_url", value = "题图url", required = true, dataType = "String"),
+    })
+    @PostMapping("article/picture/{id}")
+    public String addArticlePicture(@PathVariable Long id, @RequestBody String picture_url) {
+        return null;
+    }
 
 
     /**

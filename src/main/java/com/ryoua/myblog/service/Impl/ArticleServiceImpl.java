@@ -4,7 +4,6 @@ import com.ryoua.myblog.dao.*;
 import com.ryoua.myblog.dto.ArticleDto;
 import com.ryoua.myblog.dto.ArticleWithPictureDto;
 import com.ryoua.myblog.entity.*;
-import com.ryoua.myblog.repository.*;
 import com.ryoua.myblog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -295,31 +294,6 @@ public class ArticleServiceImpl implements ArticleService {
         // 4.不大于五个则直接返回
         return articles;
     }
-
-//    /**
-//     * 为ArticleInfo填充对应的content/picture/category信息
-//     * 说明：每一个ArticleInfo必有对应的这些信息，这是在增加时限制的
-//     *
-//     * @param articleInfo
-//     */
-//    private void fill(ArticleInfo articleInfo) {
-//        Long articleId = articleInfo.getId();
-//        // 填充picture信息
-//        ArticlePictureExample example = new ArticlePictureExample();
-//        example.or().andArticleIdEqualTo(articleId);
-//        List<ArticlePicture> articlePictures = articlePictureMapper.selectByExample(example);
-//        articleInfo.setArticlePicture(articlePictures.get(0));
-//        // 填充content信息
-//        ArticleContentExample example1 = new ArticleContentExample();
-//        example1.or().andArticleIdEqualTo(articleId);
-//        List<ArticleContent> articleContents = articleContentMapper.selectByExample(example1);
-//        articleInfo.setArticleContent(articleContents.get(0));
-//        // 填充category信息
-//        ArticleCategoryExample example2 = new ArticleCategoryExample();
-//        example2.or().andArticleIdEqualTo(articleId);
-//        List<ArticleCategory> articleCategories = articleCategoryMapper.selectByExample(example2);
-//        articleInfo.setArticleCategory(articleCategories.get(0));
-//    }
 
     /**
      * 返回最新插入一条数据的ID

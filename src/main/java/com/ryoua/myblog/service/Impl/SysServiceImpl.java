@@ -22,16 +22,6 @@ public class SysServiceImpl implements SysService {
     @Autowired
     SysViewMapper sysViewMapper;
 
-//    private static SysServiceImpl sysService;
-//
-//    @PostConstruct
-//    public void init() {
-//        sysService = this;
-//        sysService.sysLogMapper = this.sysLogMapper;
-//        sysService.sysViewMapper = this.sysViewMapper;
-//    }
-
-
     /**
      * 增加一条日志信息
      *

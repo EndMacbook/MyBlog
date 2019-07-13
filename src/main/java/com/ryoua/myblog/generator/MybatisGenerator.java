@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Mybatis生成器
+ */
 public class MybatisGenerator {
     public static void main(String[] args) throws Exception {
         String today = "2018-6-19";
