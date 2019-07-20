@@ -148,12 +148,10 @@ public class ForeController extends BaseController {
     })
     @PostMapping("comment/article/{id}")
     public String addArticleComment(@PathVariable Long id, @RequestBody ArticleCommentDto articleCommentDto, HttpServletRequest request) {
-
         String ip = request.getRemoteAddr();
         articleCommentDto.setIp(ip);
         articleCommentDto.setArticleId(id);
         commentService.addArticleComment(articleCommentDto);
-
         return null;
     }
 
@@ -170,11 +168,9 @@ public class ForeController extends BaseController {
     })
     @PostMapping("comment")
     public String addMessage(@RequestBody Comment comment, HttpServletRequest request) {
-
         String ip = request.getRemoteAddr();
         comment.setIp(ip);
         commentService.addComment(comment);
-
         return null;
     }
 }

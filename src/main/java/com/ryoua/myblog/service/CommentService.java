@@ -19,5 +19,7 @@ public interface CommentService {
 
     List<Comment> listAllComment();
 
+    Comment getOneById(Long id);
+
     List<ArticleCommentDto> listAllArticleCommentById(Long id);
 }

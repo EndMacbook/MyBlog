@@ -12,6 +12,8 @@ import java.util.List;
 public interface ArticleService {
     void addArticle(ArticleDto articleDto);
 
+    void addArticlePicture(Long id, String url);
+
     void deleteArticleById(Long id);
 
     void updateArticle(ArticleDto articleDto);

@@ -28,7 +28,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     CategoryInfoMapper categoryInfoMapper;
 
-    private static byte MAX_LASTEST_ARTICLE_COUNT = 5;
+    private static final byte MAX_LASTEST_ARTICLE_COUNT = 5;
 
     /**
      * 增加一篇文章信息
@@ -349,4 +349,11 @@ public class ArticleServiceImpl implements ArticleService {
         return articles;
     }
 
+    @Override
+    public void addArticlePicture(Long id, String url) {
+        ArticlePicture articlePicture = new ArticlePicture();
+        articlePicture.setArticleId(id);
+        articlePicture.setPictureUrl(url);
+        articlePictureMapper.insert(articlePicture);
+    }
 }

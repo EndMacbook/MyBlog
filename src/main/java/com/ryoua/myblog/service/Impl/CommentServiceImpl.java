@@ -133,4 +133,9 @@ public class CommentServiceImpl implements CommentService {
         }
         return comments;
     }
+
+    @Override
+    public Comment getOneById(Long id) {
+        return commentMapper.selectByPrimaryKey(id);
+    }
 }

@@ -13,9 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
-public class SysController {
-    @Autowired
-    SysService sysService;
+public class SysController extends BaseController{
 
     /**
      * 返回所有的系统日志记录信息

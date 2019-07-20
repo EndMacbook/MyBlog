@@ -20,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 public class BackController extends BaseController {
 
     /* 后台登录账号密码 */
-    private static String username = "ryoua";
-    private static String password = "981013";
+    private static final String USERNAME= "ryoua";
+    private static final String PASSWORD = "981013";
 
     /**
      * 后台登录操作
@@ -31,9 +31,14 @@ public class BackController extends BaseController {
      * @return
      */
     @PostMapping("/login")
+    @ApiOperation("后台登陆页面")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "userName", value = "用户账号", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "用户密码", required = true, dataType = "String"),
+    })
     public String login(User user, HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 对用户账号进行验证,是否正确
-        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+        if (user.getUsername().equals(USERNAME) && user.getPassword().equals(PASSWORD)) {
             request.getSession().setAttribute("user", user);
             response.sendRedirect(request.getContextPath() + "/admin/index.html");
         } else {
@@ -147,6 +152,7 @@ public class BackController extends BaseController {
     })
     @PostMapping("article/picture/{id}")
     public String addArticlePicture(@PathVariable Long id, @RequestBody String picture_url) {
+        articleService.addArticlePicture(id, picture_url);
         return null;
     }
 
@@ -259,7 +265,7 @@ public class BackController extends BaseController {
     @ApiImplicitParam(name = "id", value = "评论/留言ID", required = true, dataType = "Long")
     @GetMapping("comment/{id}")
     public Comment getCommentById(@PathVariable Long id) {
-        return null;
+        return commentService.getOneById(id);
     }
 
 
