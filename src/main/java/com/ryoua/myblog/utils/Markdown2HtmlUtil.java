@@ -9,6 +9,7 @@ import com.vladsch.flexmark.parser.ParserEmulationProfile;
 import com.vladsch.flexmark.util.options.MutableDataSet;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @Author ryoua Created on 2019-05-16
@@ -23,7 +24,7 @@ public class Markdown2HtmlUtil {
     public static String markdown2html(String markdown) {
         MutableDataSet options = new MutableDataSet();
         options.setFrom(ParserEmulationProfile.MARKDOWN);
-        options.set(Parser.EXTENSIONS, Arrays.asList(new Extension[]{TablesExtension.create()}));
+        options.set(Parser.EXTENSIONS, Collections.singletonList(TablesExtension.create()));
         Parser parser = Parser.builder(options).build();
         HtmlRenderer renderer = HtmlRenderer.builder(options).build();
 
